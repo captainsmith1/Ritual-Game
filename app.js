@@ -69,7 +69,7 @@ function makeMove(index, player) {
       });
 
     } else {
-      statusText.textContent = "🤖 Computer Wins!";
+      statusText.textContent = "🤖 Josh Wins!";
       loseSound.play();
       vibrate([400]);
     }

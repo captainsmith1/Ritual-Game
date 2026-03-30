@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+
+  background: linear-gradient(90deg, #52c234, #061700);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.board {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+h1, #status {
+  margin-top: 20px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+
+.cell:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
+}
+
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #00c853;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00e676;
+}
+.eye {
+  animation: blink 3s infinite;
+  transform-origin: center;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* pop animation */
+.cat, .robot {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.cat:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.human:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* glowing eyes effect */
+.human ellipse {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+.cell svg {
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+}
+
+.cat, .human {
+  animation: pop 0.2s ease;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* optional glow effect */
+.logo {
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.6));
+}
+
+/* smooth hover */
+.title:hover .logo {
+  transform: rotate(10deg) scale(1.1);
+  transition: 0.3s ease;
+}
+.logo {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* 🔥 TITLE STYLE */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+
+  font-size: 42px;
+  font-weight: bold;
+
+  background: linear-gradient(90deg, #ffffff, #ffd6ff, #ffffff);
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: glowText 3s linear infinite;
+}
+
+/* ✨ glowing animation */
+@keyframes glowText {
+  0% {
+    background-position: 0% center;
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  }
+  50% {
+    background-position: 100% center;
+    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+  }
+  100% {
+    background-position: 0% center;
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  }
+}
+
+/* 🧿 logo upgrade */
+.logo {
+  width: 45px;
+  height: 45px;
+  animation: pulse 2s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
+}
+
+/* ✅ FIX IMAGE SIZE */
+.cell img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+}
+/* 🔥 FULLSCREEN MENU */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  background: linear-gradient(90deg, #52c234, #061700);
+  z-index: 999;
+}
+
+.menu-title {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.menu button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  background: #00c853;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background: #00e676;
+}
+
+.creator {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.creator a {
+  color: #00e676;
+  text-decoration: none;
+}
+.exit-btn {
+  margin-top: 10px;
+  background: #ff5252;
+}
+
+.exit-btn:hover {
+  background: #ff1744;
+}

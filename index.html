@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe 🐱 vs 🧑</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔥 WELCOME SCREEN -->
+<div id="menu" class="menu">
+  <h1 class="menu-title"> Welcome to Ritual Game </h1>
+
+  <button onclick="playButtonSound(); startGame()">▶ Play</button>
+  <button onclick="playButtonSound(); showGuide()">📖 Guide</button>
+
+  <p class="creator">
+    Created by 
+    <a href="https://x.com/0xRusaa" target="_blank">
+      @0xRusaa
+    </a>
+  </p>
+</div>
+
+<!-- 🎮 GAME (HIDDEN FIRST) -->
+<div id="game" style="display: none;">
+
+  <h1 class="title">
+    <img src="logo realll.png" class="logo">
+    Ritual Game
+  </h1>
+
+  <select id="difficulty">
+    <option value="easy">Easy</option>
+    <option value="medium" selected>Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+
+  <p id="status">Your Turn</p>
+
+  <div class="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+  </div>
+
+  <button onclick="restartGame()">Restart Game</button>
+  <button onclick="exitGame()" class="exit-btn">⬅ Exit</button>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
